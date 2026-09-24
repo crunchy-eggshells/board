@@ -674,8 +674,8 @@ function renderMain(){
   wait.hidden=showBoard||tab==="admin";
   if(!showBoard){
     wait.textContent="";
-    if(me.isAdmin){wait.append(el("div",{class:"big",text:"🛠️ No faction open"}),el("p",{class:"hint",style:"margin:0",text:factions.length?"Pick a faction from the server leaderboard or the switcher to view its board.":"Create your first faction in the Admin tab."}));return}
-    wait.append(el("div",{class:"big",text:"⏳ Waiting to be recruited"}),
+    if(me.isAdmin)wait.append(el("div",{class:"big",text:"🛠️ No faction open"}),el("p",{class:"hint",style:"margin:0",text:factions.length?"Pick a faction from the server leaderboard or the switcher to view its board.":"Create your first faction in the Admin tab."}));
+    else wait.append(el("div",{class:"big",text:"⏳ Waiting to be recruited"}),
       el("p",{class:"hint",style:"margin:0",text:"Ask a faction leader to add you. They'll need your username:"}),
       el("div",{class:"uname px",text:profile?profile.username:""}),
       el("p",{class:"hint",style:"margin:0",text:"The server leaderboard shows every faction on the server."}));
